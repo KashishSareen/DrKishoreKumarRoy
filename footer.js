@@ -120,6 +120,36 @@ footer.innerHTML = `
             contact@cancerclinickolkata.com
           </li>
 
+          <!-- Social Icons with Font Awesome -->
+          <li class="flex items-center gap-5 mt-4 pt-2">
+            <a 
+              href="https://www.linkedin.com/company/cancer-clinic-kolkata/posts/?feedView=all" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="text-white hover:text-white/80 transition-colors text-3xl"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a 
+              href="https://www.youtube.com/@KnowYourHealth-DrKKRoy" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="text-white hover:text-white/80 transition-colors text-3xl"
+            >
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a 
+              href="https://www.instagram.com/cancer_clinic_kolkata?igsh=aHYwbDBvaHR6dTln" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="text-white hover:text-white/80 transition-colors text-3xl"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+
         </ul>
       </div>
 
