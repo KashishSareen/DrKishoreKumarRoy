@@ -1,0 +1,433 @@
+/* ══════════════════════════════════════════════════════════════
+   SHARED STYLES FOR CANCER CLINIC WEBSITE
+   Used by: index.html, corporate.html
+   ══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────
+   CSS VARIABLES & RESET
+   ───────────────────────────────────────────────────────────── */
+:root {
+  --rose: #c0406a;
+  --rose-lt: #e8799a;
+  --rose-dk: #8c2249;
+  --blue: #1b4f7a;
+  --blue-lt: #2d6fa4;
+  --gold: #c8973c;
+  --offwhite: #fdf8f9;
+  --dark: #12202e;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--offwhite);
+  color: var(--dark);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+.playfair {
+  font-family: "Playfair Display", serif;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   UTILITY CLASSES
+   ───────────────────────────────────────────────────────────── */
+.grad-rose {
+  background: linear-gradient(
+    135deg,
+    var(--rose-dk) 0%,
+    var(--rose) 50%,
+    var(--rose-lt) 100%
+  );
+}
+
+.grad-blue {
+  background: linear-gradient(135deg, var(--dark) 0%, var(--blue) 100%);
+}
+
+.grad-hero {
+  background: linear-gradient(
+    135deg,
+    #0a1a2e 0%,
+    #143c5a 55%,
+    #1e5278 100%
+  );
+}
+
+.text-rose {
+  color: var(--rose);
+}
+
+.text-blue {
+  color: var(--blue);
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.border-rose {
+  border-color: var(--rose);
+}
+
+.bg-rose {
+  background-color: var(--rose);
+}
+
+.bg-blue {
+  background-color: var(--blue);
+}
+
+.bg-offwhite {
+  background-color: var(--offwhite);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   NAVBAR
+   ───────────────────────────────────────────────────────────── */
+#navbar {
+  background: transparent;
+  transition: all 0.35s ease;
+}
+
+#navbar.scrolled {
+  background: rgba(23, 60, 92, 0.92);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav-link {
+  position: relative;
+  color: white;
+  transition: color 0.3s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #f472b6;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f472b6;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   MOBILE MENU
+   ───────────────────────────────────────────────────────────── */
+#mobile-menu {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.35s ease;
+  background: rgba(7, 28, 61, 0.98);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#mobile-menu.open {
+  max-height: 500px;
+  opacity: 1;
+}
+
+#mobile-menu a {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+#mobile-menu a:hover {
+  color: #f472b6;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   SECTION RIBBON
+   ───────────────────────────────────────────────────────────── */
+.section-ribbon {
+  width: 48px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--rose), var(--rose-lt));
+  display: inline-block;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   CARDS & COMPONENTS
+   ───────────────────────────────────────────────────────────── */
+.service-card {
+  border-top: 3px solid var(--rose);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(192, 64, 106, 0.15);
+}
+
+.corp-card {
+  transition: transform 0.25s ease, box-shadow 0.3s;
+  border-radius: 1rem;
+}
+
+.corp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 40px -12px rgba(192, 64, 106, 0.22);
+}
+
+.stat-card {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.stat-item {
+  position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: rgba(192, 64, 106, 0.2);
+}
+
+.doc-frame {
+  border: 3px solid var(--rose);
+  box-shadow: 0 0 0 6px rgba(192, 64, 106, 0.12);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 999px;
+}
+
+.testimonial-card {
+  border-left: 3px solid var(--rose);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(192, 64, 106, 0.12);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FORMS & INPUTS
+   ───────────────────────────────────────────────────────────── */
+.appt-input,
+.form-input {
+  width: 100%;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.appt-input:focus,
+.form-input:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(192, 64, 106, 0.12);
+}
+
+.form-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #374151;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FLOATING WHATSAPP BUTTON
+   ───────────────────────────────────────────────────────────── */
+.wa-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+  transition: transform 0.25s;
+}
+
+.wa-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   SUCCESS OVERLAY
+   ───────────────────────────────────────────────────────────── */
+#success-message {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10, 26, 46, 0.85);
+  backdrop-filter: blur(8px);
+  align-items: center;
+  justify-content: center;
+}
+
+#success-message.show {
+  display: flex;
+}
+
+.success-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   TIMELINE
+   ───────────────────────────────────────────────────────────── */
+.timeline-step {
+  position: relative;
+}
+
+.timeline-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--rose-lt), transparent);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   ANIMATIONS
+   ───────────────────────────────────────────────────────────── */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatBadge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.pulse-ring {
+  animation: pulse-ring 2.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+.hero-badge {
+  animation: floatBadge 3s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 320px) {
+  h1 {
+    font-size: 1.6rem !important;
+  }
+  .hero-tagline {
+    font-size: 0.8rem !important;
+  }
+}
+
+section,
+footer,
+nav,
+div {
+  max-width: 100%;
+}
+
+img,
+svg,
+iframe {
+  max-width: 100%;
+}
